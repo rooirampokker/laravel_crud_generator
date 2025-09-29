@@ -1,11 +1,11 @@
 ## Description
-- Creates all the files required for a full CRUD+ endpoint for a whitelisted application.
+- Creates all the files required for a full CRUD+ endpoint for a whitelisted RESTful API.
 - Templates can be added or updated in this projects `resources/templates` directory.
 - The following files are either created up updated as necessary:
 
 **ROUTING**
  - [UPDATE] routes/api_`<api_version>`.php
- - [CREATE] routes/<model>.php
+ - [CREATE] routes/`<model>`.php
 
 **BUSINESS LOGIC**
 - [CREATE] app/Models/`<Model>`.php
@@ -22,7 +22,7 @@
 **VALIDATION**
 - [CREATE] app/Http/Requests/`<Model>`StoreRequest.php
 - [CREATE] app/Http/Requests/`<Model>`UpdateRequest.php
-- [CREATE] app/Policies/<Model>Policy.php
+- [CREATE] app/Policies/`<Model>`Policy.php
 - [CREATE] app/Policies/Interfaces/`<Model>`PolicyInterface.php
 - [UPDATE] config/role_permissions.php
 
@@ -37,16 +37,16 @@ UNIT TESTS
 ~~- [CREATE] resources/yml/api/<api_version>/schemas/<models>.schema.yml~~
 
 LANGUAGE
-- [CREATE] resources/lang/en/<models>.php
+- [CREATE] resources/lang/en/`<models>`.php
 
 DATABASE
-- [CREATE] database/migrations/0000_00_000000_create_<model>_table.php
-- [CREATE] database/factories/<Model>Factory.php
+- [CREATE] database/migrations/0000_00_000000_create_`<model>`_table.php
+- [CREATE] database/factories/`<Model>`Factory.php
 ```
 ## Installation
 Clone this repo into the same root directory that contains your host laravel application.
 
-Include the package into your host laravel application's  `composer.json` file with:
+Include the package into your host laravel application's `composer.json` file with:
 ```json
 ...  
   "require-dev": {

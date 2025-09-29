@@ -1,16 +1,16 @@
 <?php
 
-namespace Rampokker\CrudScaffold\Facades;
+namespace Rampokker\LaravelCrudGenerator\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Rampokker\CrudScaffold\LaravelCrudGenerator
+ * @see \Rampokker\LaravelCrudGenerator\LaravelCrudGenerator
  */
 class LaravelCrudGenerator extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \Rampokker\CrudScaffold\LaravelCrudGenerator::class;
+        return \Rampokker\LaravelCrudGenerator\LaravelCrudGenerator::class;
     }
 }

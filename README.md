@@ -10,7 +10,7 @@
 **BUSINESS LOGIC**
 - [CREATE] app/Models/`<Model>`.php
 - [CREATE] app/Http/Controllers/api/`<api_version>`/`<Model>`Controller.php
-- [CREATE] app/Repository/api/`<api_version>`/`<Model`>`Repository.php
+- [CREATE] app/Repository/api/`<api_version>`/`<Model>`Repository.php
 - [CREATE] app/Repository/Interfaces/api/`<api_version>`/`<Model>`RepositoryInterface.php
 
 - **TODO:**
@@ -42,12 +42,13 @@ LANGUAGE
 DATABASE
 - [CREATE] database/migrations/0000_00_000000_create_`<model>`_table.php
 - [CREATE] database/factories/`<Model>`Factory.php
-```
+
 ## Installation
 Clone this repo into the same root directory that contains your host laravel application.
 
 Include the package into your host laravel application's `composer.json` file with:
-```json
+```
+json
 ...  
   "require-dev": {
         ...
@@ -78,4 +79,4 @@ php artisan migrate
 ```
 
 ## Credits
-- [Leslie Albrecht](https://github.com/leslie-eventogy)
+- [Leslie Albrecht](https://github.com/rooirampokker)

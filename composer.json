@@ -1,16 +1,16 @@
 {
-    "name": "eventogy/crud-scaffold",
-    "description": "Automatically creates all files required for a default CRUD cross-section",
+    "name": "rampokker/laravel_crud_generator",
+    "description": "Automatically creates all files required for a default CRUD functional cross-section",
     "keywords": [
         "Laravel",
         "Laravel Crud Generator"
     ],
-    "homepage": "https://github.com/eventogy/crud-scaffold",
+    "homepage": "https://github.com/rooirampokker/laravel_crud_generator",
     "license": "MIT",
     "authors": [
         {
             "name": "Leslie Albrecht",
-            "email": "rooirampokker@gmail.com,
+            "email": "rooirampokker@gmail.com",
             "role": "Developer"
         }
     ],
@@ -32,13 +32,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Rampokker\\CrudScaffold\\": "src/",
-            "Rampokker\\CrudScaffold\\Database\\Factories\\": "database/factories/"
+            "Rampokker\\LaravelCrudGenerator\\": "src/",
+            "Rampokker\\LaravelCrudGenerator\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Rampokker\\CrudScaffold\\Tests\\": "tests/"
+            "Rampokker\\LaravelCrudGenerator\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -58,10 +58,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "LaravelCrudGenerator\\LaravelCrudGeneratorServiceProvider"
+                "Rampokker\\LaravelCrudGenerator\\LaravelCrudGeneratorServiceProvider"
             ],
             "aliases": {
-                "LaravelCrudGenerator": "LaravelCrudGenerator\\Facades\\LaravelCrudGenerator"
+                "LaravelCrudGenerator": "Rampokker\\LaravelCrudGenerator\\Facades\\LaravelCrudGenerator"
             }
         }
     },

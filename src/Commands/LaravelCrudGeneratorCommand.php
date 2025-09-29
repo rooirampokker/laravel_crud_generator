@@ -1,6 +1,6 @@
 <?php
 
-namespace Rampokker\CrudScaffold\Commands;
+namespace Rampokker\LaravelCrudGenerator\Commands;
 
 use Artisan;
 use Illuminate\Console\Command;

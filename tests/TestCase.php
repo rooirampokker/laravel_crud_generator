@@ -1,8 +1,8 @@
 <?php
 
-namespace Rampokker\CrudScaffold\Tests;
+namespace Rampokker\LaravelCrudGenerator\Tests;
 
-use Rampokker\CrudScaffold\LaravelCrudGeneratorServiceProvider;
+use Rampokker\LaravelCrudGenerator\LaravelCrudGeneratorServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 

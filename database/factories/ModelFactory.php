@@ -1,6 +1,6 @@
 <?php
 
-namespace Rampokker\CrudScaffold\Database\Factories;
+namespace Rampokker\LaravelCrudGenerator\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

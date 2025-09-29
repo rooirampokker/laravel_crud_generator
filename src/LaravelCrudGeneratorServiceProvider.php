@@ -1,8 +1,8 @@
 <?php
 
-namespace Rampokker\CrudScaffold;
+namespace Rampokker\LaravelCrudGenerator;
 
-use Rampokker\CrudScaffold\Commands\LaravelCrudGeneratorCommand;
+use Rampokker\LaravelCrudGenerator\Commands\LaravelCrudGeneratorCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 

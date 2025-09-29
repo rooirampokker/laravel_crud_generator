@@ -1,5 +1,5 @@
 <?php
 
-namespace Rampokker\CrudScaffold;
+namespace Rampokker\LaravelCrudGenerator;
 
 class LaravelCrudGenerator {}

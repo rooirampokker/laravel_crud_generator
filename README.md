@@ -52,13 +52,13 @@ json
 ...  
   "require-dev": {
         ...
-        "support/laravel-crud-generator": "@dev",
+        "rampokker/laravel_crud_generator": "@dev",
         ...
     }
     "repositories": [
       {
         "type": "path",
-        "url": "../laravel-crud-generator",
+        "url": "../laravel_crud_generator",
         "options": {
           "symlink": true
         }

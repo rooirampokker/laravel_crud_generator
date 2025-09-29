@@ -1,0 +1,211 @@
+
+  /[modelName]s:
+    post:
+      summary: [modelName]s
+      description: Creates a new [modelName]
+      security:
+        - OAuth2:
+            - read
+            - write
+      tags:
+        - [ModelName]s
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/[modelName]CreateRequest"
+      responses:
+        '200':    # status code
+          description: A JSON object with a data payload of the newly created [modelName]
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/[modelName]CreateSuccess"
+
+    get:
+      summary: [modelName]s
+      description: Returns a list of all non-deleted [modelName]s
+      security:
+        - OAuth2:
+            - read
+      tags:
+        - [ModelName]s
+      responses:
+        '200':    # status code
+          description: A JSON object with a data payload of all non-deleted [modelName]s
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/[modelName]IndexSuccess"
+
+  /[modelName]s/trashed:
+    get:
+      summary: [modelName]s/trashed
+      description: Returns a list of all deleted [modelName]s, if any
+      security:
+        - OAuth2:
+            - read
+      tags:
+        - [ModelName]s
+      responses:
+        '200':    # status code
+          description: A JSON object with a data payload of deleted [modelName]s
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/[modelName]IndexTrashedSuccess"
+
+  /[modelName]s/search:
+    get:
+      summary: [modelName]s/search
+      description: Returns an index of search results for the given [modelName]s, if any
+      security:
+        - OAuth2:
+            - read
+      tags:
+        - [ModelName]s
+      parameters:
+        - name: q
+          in: query
+          description: The search string - a wildcard search will be done across all searchable attributes in the model
+          required: true
+          schema:
+            type: string
+        - name: relation
+          in: query
+          description: The return all instances of a given model based of this direct relation
+          required: false
+          schema:
+            type: string
+        - name: includes
+          in: query
+          description: Include data from these directly related model in the response
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':    # status code
+          description: A JSON object with a data payload of search results for the given model
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/[modelName]searchSuccess"
+
+  /[modelName]s/all:
+    get:
+      summary: [modelName]s/all
+      description: Returns a list of all [modelName]s, including trashed records
+      security:
+        - OAuth2:
+            - read
+      tags:
+        - [ModelName]s
+      responses:
+        '200':    # status code
+          description: A JSON object with a data payload of all [modelName] records
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/[modelName]IndexAllSuccess"
+
+  /[modelName]s/{[modelName]_id}:
+    delete:
+      summary: [modelName]s/{[modelName]_id}
+      description: Deletes an existing [modelName]
+      security:
+        - OAuth2:
+            - read
+            - write
+      tags:
+        - [ModelName]s
+      parameters:
+        - name: [modelName]_id
+          in: path
+          description: The [modelName] id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':    # status code
+          description: A JSON object with a data payload of the deleted [modelName]
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/defaultSuccess"
+
+    patch:
+      summary: [modelName]s/{[modelName]_id}
+      description: Restores a soft-deleted [modelName]
+      security:
+        - OAuth2:
+            - read
+            - write
+      tags:
+        - [ModelName]s
+      parameters:
+        - name: [modelName]_id
+          in: path
+          description: The [modelName] id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':    # status code
+          description: A JSON object with a data payload of the deleted [modelName]
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/[modelName]RestoreSuccess"
+
+    put:
+      summary: [modelName]s/{[modelName]_id}
+      description: Updates an existing [modelName]
+      security:
+        - OAuth2:
+            - write
+      tags:
+        - [ModelName]s
+      parameters:
+        - name: [modelName]_id
+          in: path
+          description: The [modelName] id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/[modelName]UpdateRequest"
+      responses:
+        '200':    # status code
+          description: A JSON object with a data payload of the updated [modelName]
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/[modelName]CreateSuccess"
+
+    get:
+      summary: [modelName]s/{[modelName]_id}
+      description: Returns a single [modelName]
+      security:
+        - OAuth2:
+            - read
+      tags:
+        - [ModelName]s
+      parameters:
+        - name: [modelName]_id
+          in: path
+          description: The [modelName] id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':    # status code
+          description: A JSON object with a data payload of the specified [modelName]
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/[modelName]ShowSuccess"

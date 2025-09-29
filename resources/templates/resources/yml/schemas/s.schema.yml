@@ -1,0 +1,174 @@
+
+[modelName]CreateRequest:
+  type: object
+  properties:
+    [ADD YOUR PROPERTIES HERE]
+
+[modelName]UpdateRequest:
+  type: object
+  properties:
+    [ADD YOUR PROPERTIES HERE]
+
+[modelName]CreateSuccess:
+  type: object
+  properties:
+    success:
+      type: boolean
+      default: true
+    code:
+      type: integer
+      default: 200
+    message:
+      type: string
+    data:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+          [ADD YOUR PROPERTIES HERE]
+          created_at:
+            type: string
+            default: "2023-07-07 09:54:43"
+          updated_at:
+            type: string
+            default: "2023-07-07 09:54:43"
+          deleted_at:
+            type: string
+            default: "2023-07-08 09:54:43"
+
+[modelName]RestoreSuccess:
+  type: object
+  properties:
+    success:
+      type: object
+      properties:
+        success:
+          type: boolean
+          default: true
+        code:
+          type: integer
+          default: 200
+        message:
+          type: string
+        data:
+          type: array
+          items:
+            type: string
+
+[modelName]IndexSuccess:
+  type: object
+  properties:
+    success:
+      type: boolean
+      default: true
+    code:
+      type: integer
+      default: 200
+    message:
+      type: string
+    data:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+          [ADD YOUR PROPERTIES HERE]
+          created_at:
+            type: string
+            default: "2022-07-07 09:54:43"
+          updated_at:
+            type: string
+            default: "2022-07-07 09:54:43"
+          deleted_at:
+            type: string
+            default: null
+
+[modelName]IndexTrashedSuccess:
+  type: object
+  properties:
+    success:
+      type: boolean
+      default: true
+    code:
+      type: integer
+      default: 200
+    message:
+      type: string
+    data:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+          [ADD YOUR PROPERTIES HERE]
+          created_at:
+            type: string
+            default: "2022-07-07 09:54:43"
+          updated_at:
+            type: string
+            default: "2022-07-07 09:54:43"
+          deleted_at:
+            type: string
+            default: "2022-07-08 09:54:43"
+
+[modelName]IndexAllSuccess:
+  type: object
+  properties:
+    success:
+      type: boolean
+      default: true
+    code:
+      type: integer
+      default: 200
+    message:
+      type: string
+    data:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+          [ADD YOUR PROPERTIES HERE]
+          created_at:
+            type: string
+            default: "2022-07-07 09:54:43"
+          updated_at:
+            type: string
+            default: "2022-07-07 09:54:43"
+          deleted_at:
+            type: string
+            default: "2022-07-08 09:54:43"
+
+[modelName]ShowSuccess:
+  type: object
+  properties:
+    success:
+      type: boolean
+      default: true
+    code:
+      type: integer
+      default: 200
+    message:
+      type: string
+    data:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+          [ADD YOUR PROPERTIES HERE]
+          created_at:
+            type: string
+            default: "2023-07-07 09:54:43"
+          updated_at:
+            type: string
+            default: "2023-07-07 09:54:43"
+          deleted_at:
+            type: string
+            default: null

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Repository\api\[apiVersion]\Eloquent;
+namespace App\Http\Repository\api\[apiVersion];
 
 use App\Http\Repository\api\[apiVersion]\[ModelName]RepositoryInterface;
 use App\Models\[ModelName];

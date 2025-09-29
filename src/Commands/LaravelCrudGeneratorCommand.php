@@ -15,8 +15,6 @@ class LaravelCrudGeneratorCommand extends Command
 
     protected string $model;
 
-    protected bool $isTenant;
-
     protected string $apiVersion;
 
     protected string $modelFields;
@@ -24,7 +22,7 @@ class LaravelCrudGeneratorCommand extends Command
     public function handle(): int
     {
         $this->model = $this->ask('Model (singular)');
-        $this->isTenant = $this->confirm('Should this model endpoint be accessible to tenants?', true);
+        //$this->isTenant = $this->confirm('Should this model endpoint be accessible to tenants?', true);
         $this->modelFields = $this->ask('Provide a comma-seperated list of attributes for this model (eg. name,age,weight)', default: '');
         $this->apiVersion = $this->ask('API Version?', default: 'v1');
 
@@ -70,19 +68,11 @@ class LaravelCrudGeneratorCommand extends Command
      */
     private function setRoute()
     {
-        $centralRoutePath = '/routes/central/';
-        $centralSubToken = '        require base_path() . \'/routes/';
-
-        $tenantRoutePath = '/routes/';
-        $tenantSubToken = "            require '";
+        $routePath = '/routes/';
+        $subToken = '        require base_path() . \'/routes/';
         $routeMarker = "        });\n    });";
 
-        if (! $this->isTenant) {
-            $this->setRouteDetails($centralRoutePath, $routeMarker, $centralSubToken);
-        } else {
-            $this->setRouteDetails($tenantRoutePath, $routeMarker, $tenantSubToken);
-        }
-
+        $this->setRouteDetails($routePath, $routeMarker, $subToken);
     }
 
     /**
@@ -154,9 +144,9 @@ class LaravelCrudGeneratorCommand extends Command
     /**
      * @return void
      */
-    private function setRepositoryInterface()
+    private function setRepositoryEloquent()
     {
-        $this->processTemplate('app/Http/Repository/', 'RepositoryInterface.php', '/api/'.$this->apiVersion);
+        $this->processTemplate('app/Http/Repository/', 'Repository.php', '/api/'.$this->apiVersion);
     }
 
     //    /**
@@ -218,11 +208,11 @@ class LaravelCrudGeneratorCommand extends Command
     /**
      * @return void
      */
-    private function setRepositoryEloquent()
+    private function setRepositoryInterface()
     {
-        $template = $this->getTemplate('app/Http/Repository/Eloquent/Repository.php');
+        $template = $this->getTemplate('app/Http/Repository/Interfaces/RepositoryInterface.php');
         $template = $this->doTokenReplacement($template, false);
-        $this->putTemplate($template, 'app/Http/Repository/api/'.$this->apiVersion.'/Eloquent/'.ucfirst($this->model).'Repository.php');
+        $this->putTemplate($template, 'app/Http/Repository/api/'.$this->apiVersion.'/Interfaces/'.ucfirst($this->model).'RepositoryInterface.php');
     }
 
     //    /**
